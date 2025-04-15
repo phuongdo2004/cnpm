@@ -3,7 +3,7 @@
     if(isset($data['info_sv'])&&mysqli_num_rows($data['info_sv'])>0){
         while($row=mysqli_fetch_assoc($data['info_sv'])){
             $masv=$row['maSV'];
-            $tensv=$row['tenSV'];
+            $tensv=$row['hoTen'];
             $ns=$row['ngaySinh'];
             $email=$row['email'];
             $sdt=$row['soDienThoai'];

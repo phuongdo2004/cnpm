@@ -4,7 +4,7 @@ class connectDB{
     protected $server='localhost';
     protected $user='root';
     protected $pass='';
-    protected $db='thuvvien';
+    protected $db='thuvien';
     function __construct()
     {
         $this->con=mysqli_connect($this->server,$this->user,$this->pass,$this->db);

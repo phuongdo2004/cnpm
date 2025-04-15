@@ -1,7 +1,7 @@
 <?php
     class Sinhvien_m extends connectDB{
         function ThemSinhVien($masv,$tensv,$ngaysinh,$email,$sdt){
-            $sql="INSERT INTO sinhvien VALUES('$masv','$tensv','$ngaysinh','$email','$sdt','$sdt')";
+            $sql="INSERT INTO sinhvien VALUES('$masv','$tensv','$ngaysinh','$email','$sdt','1')";
             return mysqli_query($this->con,$sql);
         }
 
@@ -16,6 +16,7 @@
 
         function CheckDangNhap($masv,$mk){
             $sql="SELECT * FROM sinhvien WHERE maSV='$masv' AND matKhau='$mk'";
+            
             $dl=mysqli_query($this->con,$sql);
             $kq=false;
             if(mysqli_num_rows($dl)>0)
@@ -24,7 +25,7 @@
         }
 
         function TimKiemSinhVien($masv,$tensv,$email,$sdt){
-            $sql="SELECT *, DATE_FORMAT(ngaySinh, '%d/%m/%Y') AS formattedNgaySinh FROM sinhvien WHERE maSV LIKE '%$masv%' AND tenSV LIKE '%$tensv%' AND email LIKE '%$email%' AND soDienThoai LIKE '%$sdt%' ";
+            $sql="SELECT *, DATE_FORMAT(ngaySinh, '%d/%m/%Y') AS formattedNgaySinh FROM sinhvien WHERE maSV LIKE '%$masv%' AND hoTen LIKE '%$tensv%' AND email LIKE '%$email%' AND soDienThoai LIKE '%$sdt%' ";
             return mysqli_query($this->con,$sql);
         }
 
@@ -39,7 +40,7 @@
         }
 
         function CapNhatSinhVien($masv,$tensv,$ngaysinh,$email,$sdt,$mk){
-            $sql="UPDATE sinhvien SET tenSV='$tensv', ngaySinh='$ngaysinh', email='$email', soDienThoai='$sdt', matKhau='$mk' WHERE maSV='$masv'";
+            $sql="UPDATE sinhvien SET hoTen='$tensv', ngaySinh='$ngaysinh', email='$email', soDienThoai='$sdt', matKhau='$mk' WHERE maSV='$masv'";
             return mysqli_query($this->con,$sql);
         }
 

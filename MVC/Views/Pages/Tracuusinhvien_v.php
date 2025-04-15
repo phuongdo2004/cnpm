@@ -57,7 +57,7 @@
                     <tr >
                         <td style="width: 10vw;border: 1px solid black;text-align:center"><?php echo (++$i) ?></td>
                         <td style="width: 15vw;border: 1px solid black"><?php echo $row['maSV'] ?></td>
-                        <td style="width: 20vw;border: 1px solid black"><?php echo $row['tenSV'] ?></td>
+                        <td style="width: 20vw;border: 1px solid black"><?php echo $row['hoTen'] ?></td>
                         <td style="width: 10vw;border: 1px solid black"><?php echo $row['formattedNgaySinh'] ?></td>
                         <td style="width: 20vw;border: 1px solid black"><?php echo $row['email'] ?></td>
                         <td style="width: 15vw;border: 1px solid black"><?php echo $row['soDienThoai'] ?></td>
